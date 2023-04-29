@@ -217,11 +217,6 @@ function Chat() {
                     <p className="text-red-500">{error}</p>
                 </div>
             )}
-            <footer className="m-auto p-4">
-                <a href="/">
-                    Powered by LangChainAI.
-                </a>
-            </footer>
         </>
     )
 }

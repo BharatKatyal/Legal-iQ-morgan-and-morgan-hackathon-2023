@@ -146,6 +146,7 @@
 
 .markdownanswer {
   line-height: 1.75;
+  overflow: hidden;
 }
 
 .markdownanswer a:hover {
@@ -216,6 +217,7 @@
   color: #5f6368;
   font-size: 0.8rem;
   margin: 1.5rem;
+  visibility: hidden;
 }
 
 .footer a {
