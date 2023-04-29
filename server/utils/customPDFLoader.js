@@ -4,14 +4,16 @@ import { BaseDocumentLoader } from 'langchain/document_loaders';
 
 export class BufferLoader extends BaseDocumentLoader {
   constructor(filePathOrBlob) {
-    super();
+    super(filePathOrBlob);
+    this.filePathOrBlob = filePathOrBlob;
   }
 
-  parse(raw, metadata)
+  parse(raw, metadata) {};
 
   async load() {
     let buffer
     let metadata
+    console.log(this.filePathOrBlob);
     if (typeof this.filePathOrBlob === 'string') {
       buffer = await readFile(this.filePathOrBlob);
       metadata = { source: this.filePathOrBlob };
