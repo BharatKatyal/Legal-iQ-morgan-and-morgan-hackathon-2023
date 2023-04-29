@@ -2,6 +2,7 @@ import { Document } from 'langchain/document';
 import { readFile } from 'fs/promises';
 import { BaseDocumentLoader } from 'langchain/document_loaders';
 import mammoth from 'mammoth'
+import { convert } from 'html-to-text';
 
 export class BufferLoader extends BaseDocumentLoader {
   constructor(filePathOrBlob) {
@@ -60,9 +61,10 @@ async function PDFLoaderImports() {
 export class CustomDocXLoader extends BufferLoader {
     async parse(raw, metadata) {
       const { value } = await mammoth.convertToHtml({ buffer: raw });
+      const plainText = convert(value);
       return [
         new Document({
-          pageContent: value,
+          pageContent: plainText,
           metadata: {
             ...metadata,
             docx_numpages: 1,
