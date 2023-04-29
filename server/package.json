@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "type": "module",
   "dependencies": {
     "@pinecone-database/pinecone": "^0.0.14",
     "clsx": "^1.2.1",
