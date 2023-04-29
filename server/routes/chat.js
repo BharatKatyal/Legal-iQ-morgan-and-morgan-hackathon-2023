@@ -7,7 +7,7 @@ import express from 'express';
 
 const router = express.Router();
 
-export default router.post("/chat", async (req, res) => {
+router.post("/", async (req, res) => {
   const { question, history } = req.body;
 
   console.log('question', question);
@@ -46,3 +46,5 @@ export default router.post("/chat", async (req, res) => {
     res.status(500).json({ error: error.message || 'Something went wrong' });
   }
 });
+
+export default router;
