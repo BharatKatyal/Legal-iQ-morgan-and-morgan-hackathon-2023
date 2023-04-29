@@ -1,9 +1,8 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from "express";
+import chatRouter from "./chat";
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const router = Router();
 
-module.exports = router;
+router.use("/chat", chatRouter);
+
+export default router;
