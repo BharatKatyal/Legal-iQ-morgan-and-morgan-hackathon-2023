@@ -1,6 +1,7 @@
 import { Document } from 'langchain/document';
 import { readFile } from 'fs/promises';
 import { BaseDocumentLoader } from 'langchain/document_loaders';
+import mammoth from 'mammoth'
 
 export class BufferLoader extends BaseDocumentLoader {
   constructor(filePathOrBlob) {
@@ -29,17 +30,17 @@ export class BufferLoader extends BaseDocumentLoader {
 
 export class CustomPDFLoader extends BufferLoader {
     async parse(raw, metadata) {
-    const { pdf } = await PDFLoaderImports();
-    const parsed = await pdf(raw);
-    return [
-      new Document({
-        pageContent: parsed.text,
-        metadata: {
-          ...metadata,
-          pdf_numpages: parsed.numpages,
-        },
-      }),
-    ];
+        const { pdf } = await PDFLoaderImports();
+        const parsed = await pdf(raw);
+        return [
+        new Document({
+            pageContent: parsed.text,
+            metadata: {
+            ...metadata,
+            pdf_numpages: parsed.numpages,
+            },
+        }),
+        ];
   }
 }
 
@@ -55,3 +56,18 @@ async function PDFLoaderImports() {
     );
   }
 }
+
+export class CustomDocXLoader extends BufferLoader {
+    async parse(raw, metadata) {
+      const { value } = await mammoth.convertToHtml({ buffer: raw });
+      return [
+        new Document({
+          pageContent: value,
+          metadata: {
+            ...metadata,
+            docx_numpages: 1,
+          },
+        }),
+      ];
+    }
+  }
