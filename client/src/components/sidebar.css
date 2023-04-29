@@ -1,0 +1,39 @@
+#sidebar {
+    width: 260px;
+    background-color: var(--bs-body-color);
+    color: white;
+    height: 100%;
+    padding: 8px;
+}
+
+#newFileButton {
+    width: 100%;
+    padding: 12px;
+    font-size: .875rem;
+    background-color: var(--bs-body-color);
+    border-color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#newFileButton:hover {
+    background-color: hsla(240,9%,59%,.1)
+}
+
+#newPlus {
+    font-size: 1.2rem;
+}
+
+.sideCase {
+    display: flex;
+    width: 100%;
+    border-radius: 4px;
+    font-size: .875rem;
+    padding: 12px
+}
+
+.sideCase:hover {
+    background-color: var(--bs-gray-800);
+    cursor: pointer;
+}
