@@ -140,6 +140,8 @@
 .usermessage,
 .usermessagewaiting {
   display: flex;
+  flex-direction: column;
+  gap: .8rem;
 }
 
 .markdownanswer {
@@ -223,6 +225,10 @@
 
 .footer a:hover {
   opacity: 0.8;
+}
+
+.header {
+  margin-left: 1rem;
 }
 
 /* Mobile optimization */

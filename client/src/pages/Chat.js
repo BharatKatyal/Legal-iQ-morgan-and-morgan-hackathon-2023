@@ -99,7 +99,7 @@ function Chat() {
 
     return (
         <>
-            <h1>Chat With Your Legal Docs</h1>
+            <h1 className='header'>Legal Document Analysis Bot</h1>
             <div ref={messageListRef} className="messageList">
                 {messages.map((message, index) => {
                     let icon;
@@ -121,7 +121,7 @@ function Chat() {
                         icon = (
                             <img
                                 key={index}
-                                src="/usericon.png"
+                                src="/usericon.svg"
                                 alt="Me"
                                 width="30"
                                 height="30"
