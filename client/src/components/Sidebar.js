@@ -7,7 +7,7 @@ import './sidebar.css';
 function Sidebar({ cases, onCaseSelected }) {
   const [selectedCase, setSelectedCase] = useState(null);
   const [showNewCaseModal, setShowNewCaseModal] = useState(false);
-  const [newCaseNumber, setNewCaseNumber] = useState('');
+  const [newCaseName, setNewCaseName] = useState('');
   const [newCaseFiles, setNewCaseFiles] = useState([]);
 
   const handleCaseClick = (legalCase) => {
@@ -24,21 +24,35 @@ function Sidebar({ cases, onCaseSelected }) {
   };
 
   const handleNewCaseNumberChange = (e) => {
-    setNewCaseNumber(e.target.value);
+    setNewCaseName(e.target.value);
   };
 
-  const handleNewCaseFormSubmit = (e) => {
+  const handleNewCaseFormSubmit = async (e) => {
     e.preventDefault();
+    if (newCaseFiles.length === 0) return;
+
+    const formData = new FormData();
+    for (const file of newCaseFiles) {
+        formData.append('files', file);
+    }
 
     // TODO: Perform some action with the new case number and files
-    console.log('New case number:', newCaseNumber);
-    console.log('New case files:', newCaseFiles);
+    const response = await fetch(`/api/upload/${newCaseName}`, {
+        method: 'POST',
+        body: formData
+    });
+    const result = await response.json();
+    console.log(result);
 
     // Reset form fields
-    setNewCaseNumber('');
+    setNewCaseName('');
     setNewCaseFiles([]);
     setShowNewCaseModal(false);
   };
+
+  const dragDropFiles = (files) => {
+    setNewCaseFiles(files);
+  }
 
   return (
     <div className="sidebar">
@@ -63,13 +77,13 @@ function Sidebar({ cases, onCaseSelected }) {
                     <Form.Control
                     type="text"
                     placeholder="Enter case number"
-                    value={newCaseNumber}
+                    value={newCaseName}
                     onChange={handleNewCaseNumberChange}
                     />
                 </Form.Group>
                 <Form.Group controlId="formCaseFiles">
                     <Form.Label>Files</Form.Label>
-                        <FileDropField />
+                        <FileDropField setFiles={dragDropFiles}/>
                 </Form.Group>
                 <Button type="submit">Create</Button>
                 </Form>

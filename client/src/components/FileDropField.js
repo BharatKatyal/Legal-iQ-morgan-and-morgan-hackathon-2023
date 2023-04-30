@@ -11,14 +11,10 @@ const styles = {
   },
 };
 
-const DragAndDrop = () => {
+const DragAndDrop = ({ setFiles }) => {
   const onDrop = useCallback((acceptedFiles) => {
     // Alert the number of accepted files
-    const fileName = acceptedFiles.map((file) => file.name);
-    alert(`Number of files: ${fileName}`);
-
-    // Do something with the files
-    console.log(acceptedFiles);
+    setFiles(acceptedFiles);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
