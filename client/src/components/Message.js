@@ -8,8 +8,8 @@ function Message({ message, type, loading }) {
   let className;
   if (type === "apiMessage") {
     icon = (
-      <video
-        src="/botgif.gif"
+      <img
+        src="/bot-image.png"
         alt="AI"
         width="40"
         height="40"
@@ -19,11 +19,11 @@ function Message({ message, type, loading }) {
     className = "apimessage";
   } else {
     icon = (
-      <video
+      <img
         src="/usericon.svg"
         alt="Me"
-        width="30"
-        height="30"
+        width="40"
+        height="40"
         className="usericon"
       />
     );
