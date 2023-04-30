@@ -10,4 +10,34 @@
 
 #workspace {
     flex-grow: 1;
+    overflow: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    border-bottom: solid;
+    border-color: yellow;
+    border-width: 4px;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px;
+    padding-top: 20px;  
+  }     
+
+.boticon,
+.usericon {
+  margin-right: 1rem;
+  border-radius: 0.1rem;
+  height: 100%;
+  background-color: rgb(240, 248, 255, 0);
+  background-size: cover;
+}
+
+.usericon {
+    margin-left: .3rem;
 }

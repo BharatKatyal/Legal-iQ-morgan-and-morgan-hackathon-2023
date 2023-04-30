@@ -114,11 +114,12 @@ function Chat() {
         <div id="chatPage">
             <Sidebar cases={cases} onCaseSelected={onCaseSelected}/>
             <div id="workspace">
-                <h1 className='header'><img src='/Morgan_&_Morgan_Logo.svg.png'
+                <h1 className='header'>
+                    <img src='/Morgan_&_Morgan_Logo.svg.png'
                     alt='Logo'
                     width = "690px"
-                    height = "100px"
-                />Legal Document Analysis Bot</h1>
+                    height = "100px"/>
+                Legal Document Analysis Bot</h1>
                 <div ref={messageListRef} className="messageList">
                 {messages.map((message, index) => (
                     <Message
