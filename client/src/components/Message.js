@@ -9,7 +9,7 @@ function Message({ message, type, loading }) {
   if (type === "apiMessage") {
     icon = (
       <img
-        src="/bot-image.png"
+        src="/botgif.gif"
         alt="AI"
         width="40"
         height="40"
