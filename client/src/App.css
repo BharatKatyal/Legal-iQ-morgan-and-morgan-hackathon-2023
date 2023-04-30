@@ -8,6 +8,7 @@
 
 .header {
   width: auto;
+  background-color: #115099;
 }
 
 .header p {
@@ -16,6 +17,12 @@
 
 .cloudform {
   position: relative;
+  background-color: #E3F4FC;
+  border-radius: 0.5rem;
+  border-style: solid;
+  padding: 12px 12px 12px 12px;
+
+
 }
 
 
@@ -43,7 +50,7 @@
 }
 
 .textarea::placeholder {
-  color: #6b7280;
+  color: #000;
 }
 
 .generatebutton {
@@ -186,8 +193,8 @@
   padding: 0;
   bottom: 0;
   flex-direction: column;
-  margin-left: 3rem;
-  margin-bottom: 20px; 
+  margin-left: 1rem;
+  margin-bottom: 8px; 
 }
 
 .cloud {
@@ -199,6 +206,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+      background-color: green;
+
 }
 
 .pointsnormal {
@@ -247,6 +256,8 @@
   }
   .textarea {
     width: 22rem;
+
+    
   }
   .topnav {
     border: 1px solid black;
