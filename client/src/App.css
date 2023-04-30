@@ -23,7 +23,7 @@
 .cloudform {
   position: relative;
   padding: 12px 12px 12px 12px;
-
+  
 
 }
 
@@ -106,11 +106,17 @@
 
 .usermessage {
   position: relative;
-  background-color: #007aff;
+  background-color: #105099;
   padding: 10px 15px;
   border-radius: 15px;
-  max-width: 75%;
+  max-width: 75%; 
   margin: 10px 0;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.usermessage > .markdownanswer > p {
+  color: #FFFFFF;
 }
 
 .usermessagewaiting {
@@ -135,12 +141,14 @@
 
 .apimessage {
   position: relative;
-  background-color: #f3f3f3;
+  background-color: #FFFFFF;
   color: #fff;
   padding: 10px 15px;
   border-radius: 15px;
   max-width: 75%;
   margin: 10px 0;
+  margin-left: 1rem;
+  font-weight: 600;
 }
 
 @keyframes fadein {
@@ -327,4 +335,8 @@
 
 #root {
     height: 100vh;
+}
+
+#userInput{
+  width: 67vw;
 }
