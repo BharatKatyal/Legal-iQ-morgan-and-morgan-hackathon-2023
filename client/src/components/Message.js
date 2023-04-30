@@ -9,7 +9,7 @@ function Message({ message, type, loading }) {
   if (type === "apiMessage") {
     icon = (
       <img
-        src="/robotchat.png"
+        src="/RobotChat.png"
         alt="AI"
         width="40"
         height="40"
@@ -20,7 +20,7 @@ function Message({ message, type, loading }) {
   } else {
     icon = (
       <img
-        src="/humanchat.png"
+        src="/HumanChat.png"
         alt="Me"
         width="40"
         height="40"
@@ -32,10 +32,21 @@ function Message({ message, type, loading }) {
   }
   return (
     <div className={className}>
-      {icon}
-      <div className={"markdownanswer"}>
-        <ReactMarkdown linkTarget="_blank">{message.message}</ReactMarkdown>
-      </div>
+        { type === "apiMessage" ?
+            <div className="botHeader">
+                {icon}
+                <div className="botmarkdownanswer">
+                    <ReactMarkdown linkTarget="_blank">{message.message}</ReactMarkdown>
+                </div>
+            </div>
+            :
+            <>
+                {icon}
+                <div className="markdownanswer">
+                    <ReactMarkdown linkTarget="_blank">{message.message}</ReactMarkdown>
+                </div>
+            </>
+        }
       {message.sourceDocs && (
         <div>
           <Accordion alwaysOpen>

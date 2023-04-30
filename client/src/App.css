@@ -27,34 +27,6 @@
 
 }
 
-
-.textarea {
-  position: relative;
-  resize: none;
-  font-size: 1.1rem;
-  padding: 1rem 2rem 1rem 2rem;
-  width: 75vw;
-  border-radius: 0.5rem;
-  border: 1px solid #d9d9e3;
-  background: #ffffff;
-  color: #000;
-  outline: none;
-}
-
-.textarea:disabled {
-  opacity: 0.5;
-}
-
-.textarea:focus {
-  outline: none;
-  border-color: #6b7280;
-  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.5);
-}
-
-.textarea::placeholder {
-  color: #000;
-}
-
 .generatebutton {
   position: absolute;
   top: 1.4rem;
@@ -104,32 +76,6 @@
   margin-top: 1rem;
 }
 
-.usermessage {
-  position: relative;
-  background-color: #105099;
-  padding: 10px 15px;
-  border-radius: 15px;
-  max-width: 75%; 
-  margin: 10px 0;
-  margin-left: 1rem;
-  font-weight: 600;
-}
-
-.usermessage > .markdownanswer > p {
-  color: #FFFFFF;
-}
-
-.usermessagewaiting {
-  padding: 1.5rem;
-  color: #000;
-  background: linear-gradient(to left, #07080938, #1a1c2024, #07080936);
-  background-size: 200% 200%;
-  background-position: -100% 0;
-  animation: loading-gradient 2s ease-in-out infinite;
-  animation-direction: alternate;
-  animation-name: loading-gradient;
-}
-
 @keyframes loading-gradient {
   0% {
     background-position: -100% 0;
@@ -139,18 +85,6 @@
   }
 }
 
-.apimessage {
-  position: relative;
-  background-color: #FFFFFF;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 15px;
-  max-width: 75%;
-  margin: 10px 0;
-  margin-left: 1rem;
-  font-weight: 600;
-}
-
 @keyframes fadein {
   from {
     opacity: 0;
@@ -158,52 +92,6 @@
   to {
     opacity: 1;
   }
-}
-
-
-
-/* markdown styles */
-.markdownanswer {
-  margin-top: 5px;
-}
-
-.markdown {
-  margin-top: 10px;
-  border: 1px solid #0F5099;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.markdownanswer a:hover {
-  opacity: 0.8;
-}
-
-.markdownanswer a {
-  color: #b13a3a;
-  font-weight: 500;
-}
-
-
-
-
-
-.markdownanswer code {
-  color: #15cb19;
-  font-weight: 500;
-  white-space: pre-wrap !important;
-}
-
-.markdownanswer ol,
-.markdownanswer ul {
-  margin: 1rem;
-}
-
-
-
-.markdownanswer h1,
-.markdownanswer h2,
-.markdownanswer h3 {
-  font-size: inherit;
 }
 
 .center {
