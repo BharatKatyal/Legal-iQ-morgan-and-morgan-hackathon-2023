@@ -9,6 +9,7 @@ function Sidebar({ cases, onCaseSelected, setCases }) {
   const [showNewCaseModal, setShowNewCaseModal] = useState(false);
   const [newCaseName, setNewCaseName] = useState('');
   const [newCaseFiles, setNewCaseFiles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleCaseClick = (legalCase) => {
     setSelectedCase(legalCase);
@@ -17,6 +18,7 @@ function Sidebar({ cases, onCaseSelected, setCases }) {
 
   const handleNewCaseModalClick = () => {
     setShowNewCaseModal(true);
+    setIsLoading(false);
   };
 
   const handleNewCaseModalClose = () => {
@@ -29,6 +31,7 @@ function Sidebar({ cases, onCaseSelected, setCases }) {
 
   const handleNewCaseFormSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); 
     if (newCaseFiles.length === 0) return;
 
     const formData = new FormData();
@@ -79,26 +82,34 @@ function Sidebar({ cases, onCaseSelected, setCases }) {
                 <Modal.Title>New Case</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form onSubmit={handleNewCaseFormSubmit}>
-                <Form.Group controlId="formCaseName">
-                    <Form.Label>Case Number</Form.Label>
-                    <Form.Control
-                    type="text"
-                    placeholder="Enter case number"
-                    value={newCaseName}
-                    onChange={handleNewCaseNameChange}
-                    />
-                </Form.Group>
-                <Form.Group controlId="formCaseFiles">
-                    <Form.Label>Files</Form.Label>
-                        <FileDropField setFiles={dragDropFiles}/>
-                </Form.Group>
-                <Button type="submit">Create</Button>
-                </Form>
-            </Modal.Body>
-        </Modal>
+                {/* Update the content of the modal based on the loading status */}
+          {isLoading ? (  
+            <div className="loadingBar"><img class = "loader" src='/loading.gif' alt='Loading Bar'></img></div>
+          ) : (
+            <Form onSubmit={handleNewCaseFormSubmit}>
+              <Form.Group controlId="formCaseName">
+                <Form.Label>Case Number</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter case number"
+                  value={newCaseName}
+                  onChange={handleNewCaseNameChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="formCaseFiles">
+                <Form.Label>Files</Form.Label>
+                <FileDropField setFiles={dragDropFiles} />
+              </Form.Group>
+              <Button type="submit" className="modalButton">
+                Create
+              </Button>
+            </Form>
+          )}
+        </Modal.Body>
+      </Modal>
     </div>
-  )
+  );
 }
+
 
 export default Sidebar;

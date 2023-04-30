@@ -34,3 +34,8 @@
   .upload-button:hover {
     text-decoration-line: underline;
   }
+
+  .loader {
+    width: 24px;
+    height: 24px;
+  }

@@ -51,3 +51,20 @@
 .caseItem:active{
     background-color: var(--bs-gray-800);
 }
+
+.modalButton{
+    margin-top:20px;
+}
+
+.loading-bar {
+    max-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.modal-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
