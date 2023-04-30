@@ -11,6 +11,10 @@
   background-color: #115099;
 }
 
+
+.accordion-button{
+  background-color: purple;
+}
 .header p {
   text-align: center;
 }
@@ -100,9 +104,12 @@
 }
 
 .usermessage {
-  background: #ffffff;
-  padding: 1.5rem;
-  color: #000;
+  position: relative;
+  background-color: #007aff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 75%;
+  margin: 10px 0;
 }
 
 .usermessagewaiting {
@@ -126,10 +133,13 @@
 }
 
 .apimessage {
-  background: #f9fafb;
-  padding: 1.5rem;
-  color: #000;
-  animation: fadein 0.5s;
+  position: relative;
+  background-color: #f3f3f3;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 75%;
+  margin: 10px 0;
 }
 
 @keyframes fadein {
@@ -149,9 +159,16 @@
   gap: .8rem;
 }
 
+/* markdown styles */
 .markdownanswer {
-  line-height: 1.75;
-  overflow: hidden;
+  margin-top: 5px;
+}
+
+.markdown {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .markdownanswer a:hover {
@@ -235,6 +252,36 @@
 }
 
 
+/* markdown styles */
+.markdownanswer {
+  margin: 5px,5px,5px,5px;
+  color: #14294D;
+}
+
+.markdown {
+  /* margin-top: 10px; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* padding: 10px; */
+}
+
+/* accordion styles */
+.accordion-button {
+  background-color: #f3f3f3;
+  color: #000;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #007aff;
+  color: #fff;
+}
+
+.accordion-body {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
 
 .morganImg {
   justify-self: flex-start;

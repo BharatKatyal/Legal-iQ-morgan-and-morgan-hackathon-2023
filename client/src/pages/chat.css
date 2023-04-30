@@ -42,6 +42,8 @@
 #workspace {
     flex-grow: 1;
     overflow: auto;
+    background-color: #F3F6F7;
+    /* padding: 10px,10px,10px,10px; */
 }
 
 .header {
@@ -60,14 +62,17 @@
     padding-top: 20px;  
   }     
 
-.boticon,
-.usericon {
-  margin-right: 1rem;
-  border-radius: 0.1rem;
-  height: 100%;
-  background-color: rgb(240, 248, 255, 0);
-  background-size: cover;
-}
+
+
+.usericon,
+.boticon {
+    position: absolute;
+    right: -45px;
+    top: 10px;
+    border-radius: 50%;
+  }
+
+
 .boticon {
     border-radius: 80px;
 }
