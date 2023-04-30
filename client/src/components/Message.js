@@ -19,7 +19,7 @@ function Message({ message, type, loading }) {
     className = "apimessage";
   } else {
     icon = (
-      <img
+      <video
         src="/usericon.svg"
         alt="Me"
         width="30"
