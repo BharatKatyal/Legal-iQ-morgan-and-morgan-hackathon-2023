@@ -106,7 +106,11 @@ function Chat() {
         <div id="chatPage">
             <Sidebar cases={[{ id: 123, title: "Case" }, { id: 234, title: "Case 2" }]} onCaseSelected={onCaseSelected}/>
             <div id="workspace">
-                <h1 className='header'>Legal Document Analysis Bot</h1>
+                <h1 className='header'><img src='/Morgan_&_Morgan_Logo.svg.png'
+                    alt='Logo'
+                    width = "690px"
+                    height = "100px"
+                />Legal Document Analysis Bot</h1>
                 <div ref={messageListRef} className="messageList">
                 {messages.map((message, index) => (
                     <Message
