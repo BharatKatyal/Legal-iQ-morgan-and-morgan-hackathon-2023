@@ -230,7 +230,22 @@
 }
 
 .header {
-  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  flex-direction: column;
+  border-bottom: solid;
+  border-color: yellow;
+  border-width: 4px;
+  background-color: white;
+  font-family: 'Playfair Display', serif;
+  padding-bottom: 20px;
+  padding-top: 20px;  
+}
+
+.morganImg {
+  justify-self: flex-start;
 }
 
 /* Mobile optimization */
@@ -267,4 +282,8 @@
     width: 100%;
     text-align: center;
   }
+}
+.headImg {
+  width: 24px;
+  height: 10px;
 }

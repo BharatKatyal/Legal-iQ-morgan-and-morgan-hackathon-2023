@@ -99,7 +99,14 @@ function Chat() {
 
     return (
         <>
-            <h1 className='header'>Legal Document Analysis Bot</h1>
+            <h1 className='header'>
+                <img src = "/Morgan_&_Morgan_Logo.svg.png"
+                alt = "yellow"
+                width = "400px"
+                height = "60px"
+                className='morganImg'
+                />
+                Legal Document Analysis Bot</h1>
             <div ref={messageListRef} className="messageList">
                 {messages.map((message, index) => {
                     let icon;
