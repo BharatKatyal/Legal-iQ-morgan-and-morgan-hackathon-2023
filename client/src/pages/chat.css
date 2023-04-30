@@ -84,7 +84,7 @@
 .selection {
     display: flex;
     flex-direction: row;
-    width: 50rem;
+    width: 70rem;
     height: 10rem;
     align-items: center;
     justify-content: center;

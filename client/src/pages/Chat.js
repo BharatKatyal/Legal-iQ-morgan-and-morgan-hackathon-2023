@@ -152,7 +152,7 @@ function Chat() {
                     <img src = "/left-arrow-svgrepo-com.svg"
                     alt='arrow'
                     class = "arrow"/>
-                Select or Create a Case from the Sidebar</h2>
+                Select or Create a Case From the Case Manager</h2>
                 }
                 <div className='center'>
                     <div className="cloudform">
