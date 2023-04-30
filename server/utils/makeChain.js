@@ -9,7 +9,7 @@ Follow Up Input: {question}
 Standalone question:`;
 
 const QA_PROMPT = `You are a helpful AI assistant. Use the following pieces of context to answer the question at the end.
-Only use the given context to answer the question, and ask yourself "is this the correct piece of information" at least 2 times before responding.
+Only use the given context to answer the question, and ask yourself "is this the correct piece of information" at least 2 times before responding. Look at all the provided sources before responding.
 
 {context}
 
@@ -18,7 +18,7 @@ Helpful answer in markdown:`;
 
 export const makeChain = (vectorstore) => {
   const model = new OpenAI({
-    temperature: 0.25, // increase temepreature to get more creative answers
+    temperature: 0, // increase temepreature to get more creative answers
     modelName: 'gpt-4', //change this to gpt-4 if you have access
   });
 

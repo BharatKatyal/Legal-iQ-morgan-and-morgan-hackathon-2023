@@ -47,3 +47,7 @@
     background-color: var(--bs-gray-800);
     cursor: pointer;
 }
+
+.caseItem:active{
+    background-color: var(--bs-gray-800);
+}

@@ -111,7 +111,19 @@ function Chat() {
     function onCaseSelected(legalCase) {
         console.log(legalCase.title);
         setNamespace(legalCase.title);
-    }
+        setMessageState({
+            messages: [
+              {
+                message: "Hi, what would you like to learn about this legal case?",
+                type: "apiMessage"
+              }
+            ],
+            pending: "",
+            history: [],
+            pendingSourceDocs: []
+          });
+        }
+    
 
     return (
         <div id="chatPage">
@@ -123,7 +135,7 @@ function Chat() {
                         width = "690px"
                         height = "100px"
                     />
-                    Legal Document Analysis Bot
+                    <div class = "headWrap">LEGAL<span class = "iq">iQ</span></div>
                 </h1>
                 { namespace ?
                     <div ref={messageListRef} className="messageList">
@@ -136,7 +148,11 @@ function Chat() {
                         />
                     ))}
                     </div>
-                : <h2>Select a Case from the Sidebar</h2>
+                : <h2 class = "selection">
+                    <img src = "/left-arrow-svgrepo-com.svg"
+                    alt='arrow'
+                    class = "arrow" />
+                Select or Create a Case from the Sidebar</h2>
                 }
                 <div className='center'>
                     <div className="cloudform">
@@ -157,7 +173,7 @@ function Chat() {
                                     }
                                     value={query}
                                     onChange={(e) => setQuery(e.target.value)}
-                                    className="textarea"
+                                    className="textarea footerQuery"
                                 />
                             </Form.Group>
                             <Form.Group>

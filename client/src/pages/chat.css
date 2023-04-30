@@ -1,3 +1,31 @@
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
+	}
+}
+
 .generatebutton svg {
     width: 10px;
     height: 10px;
@@ -22,7 +50,7 @@
     border-bottom: solid;
     border-color: yellow;
     border-width: 4px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     padding-bottom: 20px;
@@ -40,4 +68,43 @@
 
 .usericon {
     margin-left: .3rem;
+}
+
+.caseButton.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+.selection {
+    display: flex;
+    flex-direction: row;
+    width: 50rem;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+    font-family:  'Raleway', sans-serif;
+    font-weight: 700;   
+    gap: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+.arrow {
+    height: 40px;
+    width:  80px;
+    position: relative;
+    animation: myAnim 12s cubic-bezier(0.65, 0, 0.35, 1) 0s infinite alternate forwards;
+}
+
+
+
+.iq {
+    color: yellow;
+}
+
+.headWrap {
+    font-size: larger;
+    color: white;
+    border-style: solid;
+    border-radius: 80px;
+    padding: 16px;  
 }

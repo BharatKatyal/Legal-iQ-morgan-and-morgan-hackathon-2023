@@ -182,9 +182,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  padding: 1rem 0;
+  position: fixed;
+  padding: 0;
+  bottom: 0;
   flex-direction: column;
+  margin-left: 1rem;
+  margin-bottom: 8px; 
 }
 
 .cloud {

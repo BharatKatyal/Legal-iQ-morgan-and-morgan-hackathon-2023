@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@pinecone-database/pinecone": "^0.0.14",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "tesseract.js-core": "^4.0.3"
   }
 }

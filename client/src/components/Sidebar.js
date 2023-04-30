@@ -64,7 +64,7 @@ function Sidebar({ cases, onCaseSelected, setCases }) {
 
   return (
     <div className="sidebar">
-      <Button id="newCaseButton" onClick={handleNewCaseModalClick}>New Case</Button>
+      <Button id="newCaseButton" onClick={handleNewCaseModalClick}>+  New Case</Button>
         {cases.map((caseItem) => (
           <div
             className="caseItem"
