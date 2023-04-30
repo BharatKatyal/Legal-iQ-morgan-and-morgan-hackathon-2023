@@ -8,7 +8,7 @@
 .sidebar {
     max-width: 260px;
     padding: 12px;
-    background-color: var(--bs-gray-900);
+    background-color: #F3F6F7;
     color: white;
     font-size: 0.875rem;
     flex-grow: 2;
@@ -26,8 +26,12 @@
 #newCaseButton {
     display: flex;
     width: 100%;
-    background-color: var(--bs-gray-900);
-    border-color: var(--bs-secondary-color);
+    background-color: #FDEB0F;
+    /* border-color:  */
+    color: #132A4E;
+    font-family: open sans;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 #newCaseButton:hover {
@@ -41,6 +45,11 @@
     border-width: 1px;
     border-color: var(--bs-secondary-color);
     border-radius: 8px;
+    color: #132A4E;
+    font-family: open sans;
+    font-weight: 400;
+    font-size: 14px;
+
 }
 
 .caseItem:hover{
@@ -50,21 +59,4 @@
 
 .caseItem:active{
     background-color: var(--bs-gray-800);
-}
-
-.modalButton{
-    margin-top:20px;
-}
-
-.loading-bar {
-    max-width: 40px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-.modal-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
