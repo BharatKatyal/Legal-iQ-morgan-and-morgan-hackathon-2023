@@ -46,7 +46,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    flex-direction: column;
+    flex-direction: row;
     border-bottom: solid;
     border-color: yellow;
     border-width: 4px;
@@ -64,6 +64,9 @@
   height: 100%;
   background-color: rgb(240, 248, 255, 0);
   background-size: cover;
+}
+.boticon {
+    border-radius: 80px;
 }
 
 .usericon {
@@ -105,6 +108,10 @@
     font-size: larger;
     color: white;
     border-style: solid;
-    border-radius: 80px;
+    border-radius: 13px;
+    border-width: 5px;
+    border-color: rgba(252,235,9,255);
+    background-color: #231f20;
     padding: 16px;  
+    height: 98px;
 }
