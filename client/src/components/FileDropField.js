@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 const styles = {
@@ -12,9 +12,12 @@ const styles = {
 };
 
 const DragAndDrop = ({ setFiles }) => {
+  const [filesInserted, setFilesInserted] = useState(false);
+
   const onDrop = useCallback((acceptedFiles) => {
     // Alert the number of accepted files
     setFiles(acceptedFiles);
+    setFilesInserted(true);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, multiple: true });
@@ -22,7 +25,9 @@ const DragAndDrop = ({ setFiles }) => {
   return (
     <div {...getRootProps()} style={styles.dropzone}>
       <input {...getInputProps()} />
-      {isDragActive ? (
+      {filesInserted ? (
+        <p>File(s) Inserted! You're good to go!</p>
+      ) : isDragActive ? (
         <p>Drop the files here ...</p>
       ) : (
         <p>Drag 'n' drop some files here, or click to select files</p>
