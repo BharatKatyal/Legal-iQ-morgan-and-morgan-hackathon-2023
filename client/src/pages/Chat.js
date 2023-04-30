@@ -151,7 +151,7 @@ function Chat() {
                 : <h2 class = "selection">
                     <img src = "/left-arrow-svgrepo-com.svg"
                     alt='arrow'
-                    class = "arrow" />
+                    class = "arrow"/>
                 Select or Create a Case from the Sidebar</h2>
                 }
                 <div className='center'>
