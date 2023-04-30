@@ -7,8 +7,11 @@
 
 .sidebar {
     max-width: 260px;
-    padding: 12px;
-    background-color: #F3F6F7;
+    /* padding: 12px; */
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    background-color: #ffffff;
     color: white;
     font-size: 0.875rem;
     flex-grow: 2;
@@ -19,44 +22,62 @@
     bottom: 0;
     display: flex;
     flex-direction: column; 
-    gap: 1rem;
+    /* gap: 1rem; */
     overflow: auto;
 }
 
 #newCaseButton {
     display: flex;
-    width: 100%;
+    width: 95%;
+    align-self: center;
+    align-items: center;
+    margin-bottom: 12px;
+    margin: 12px, 12px;
+    /* justify-content: center; */
     background-color: #FDEB0F;
     /* border-color:  */
     color: #132A4E;
     font-family: open sans;
     font-weight: 700;
     font-size: 18px;
+    border-style: none;
+    border-radius: 5px;
+    /* padding: 12px 12px; */
 }
 
 #newCaseButton:hover {
-    background-color: var(--bs-gray-800);
+    /* background-color: green; */
 }
 
 .caseItem {
-    margin-bottom: 4px;
+    /* margin-bottom: 4px; */
     padding: 12px;
     border-style: none;
     border-width: 1px;
     border-color: var(--bs-secondary-color);
-    border-radius: 8px;
+    /* border-radius: 8px; */
     color: #132A4E;
     font-family: open sans;
     font-weight: 400;
     font-size: 14px;
+    /* border-style: solid; */
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color:#EDEDED ;
+    font-family: open sans;
+    font-weight: 400;
+    font-size: 15px;
+
 
 }
 
 .caseItem:hover{
-    background-color: var(--bs-gray-800);
+    background-color: #F3F6F7;
     cursor: pointer;
+    color: #3B6EA9;
+    border: solid;
 }
 
 .caseItem:active{
-    background-color: var(--bs-gray-800);
+    /* background-color: #3B6EA9; */
 }
