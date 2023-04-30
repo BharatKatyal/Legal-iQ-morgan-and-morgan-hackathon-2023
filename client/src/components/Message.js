@@ -9,7 +9,7 @@ function Message({ message, type, loading }) {
   if (type === "apiMessage") {
     icon = (
       <img
-        src="/bot-image.png"
+        src="/robotchat.png"
         alt="AI"
         width="40"
         height="40"
@@ -20,7 +20,7 @@ function Message({ message, type, loading }) {
   } else {
     icon = (
       <img
-        src="/usericon.svg"
+        src="/humanchat.png"
         alt="Me"
         width="40"
         height="40"
