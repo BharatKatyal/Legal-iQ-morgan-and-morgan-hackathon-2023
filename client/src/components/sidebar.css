@@ -37,7 +37,7 @@
     background-color: #FDEB0F;
     /* border-color:  */
     color: #132A4E;
-    font-family: open sans;
+    font-family: open sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 700;
     font-size: 18px;
     border-style: none;
@@ -57,14 +57,13 @@
     border-color: var(--bs-secondary-color);
     /* border-radius: 8px; */
     color: #132A4E;
-    font-family: open sans;
+    font-family: open sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
     font-size: 14px;
     /* border-style: solid; */
     border-top-style: solid;
     border-bottom-style: solid;
     border-color:#EDEDED ;
-    font-family: open sans;
     font-weight: 400;
     font-size: 15px;
 
@@ -80,4 +79,8 @@
 
 .caseItem:active{
     /* background-color: #3B6EA9; */
+}
+
+.drag {
+    margin-bottom: 20px;
 }
