@@ -48,7 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 4rem;
     flex-direction: row;
     border-bottom: solid;
     border-color: yellow;
