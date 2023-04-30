@@ -4,7 +4,7 @@ import FileDropField from './FileDropField';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './sidebar.css';
 
-function Sidebar({ cases, onCaseSelected }) {
+function Sidebar({ cases, onCaseSelected, setCases }) {
   const [selectedCase, setSelectedCase] = useState(null);
   const [showNewCaseModal, setShowNewCaseModal] = useState(false);
   const [newCaseName, setNewCaseName] = useState('');
@@ -23,7 +23,7 @@ function Sidebar({ cases, onCaseSelected }) {
     setShowNewCaseModal(false);
   };
 
-  const handleNewCaseNumberChange = (e) => {
+  const handleNewCaseNameChange = (e) => {
     setNewCaseName(e.target.value);
   };
 
@@ -44,6 +44,14 @@ function Sidebar({ cases, onCaseSelected }) {
     const result = await response.json();
     console.log(result);
 
+    setCases([ ...cases, { title: result.directoryName }]);
+
+    const dbResponse = await fetch(`api/db/${result.directoryName}`, {
+        method: "POST",
+    });
+    const dbResult = await dbResponse.json();
+    console.log(dbResult);
+
     // Reset form fields
     setNewCaseName('');
     setNewCaseFiles([]);
@@ -60,7 +68,7 @@ function Sidebar({ cases, onCaseSelected }) {
         {cases.map((caseItem) => (
           <div
             className="caseItem"
-            key={caseItem.id}
+            key={Math.random()}
             onClick={() => handleCaseClick(caseItem)}
           >
             {caseItem.title}
@@ -72,13 +80,13 @@ function Sidebar({ cases, onCaseSelected }) {
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleNewCaseFormSubmit}>
-                <Form.Group controlId="formCaseNumber">
+                <Form.Group controlId="formCaseName">
                     <Form.Label>Case Number</Form.Label>
                     <Form.Control
                     type="text"
                     placeholder="Enter case number"
                     value={newCaseName}
-                    onChange={handleNewCaseNumberChange}
+                    onChange={handleNewCaseNameChange}
                     />
                 </Form.Group>
                 <Form.Group controlId="formCaseFiles">

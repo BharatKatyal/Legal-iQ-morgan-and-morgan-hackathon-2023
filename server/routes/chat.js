@@ -2,13 +2,13 @@ import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { makeChain } from '../utils/makeChain.js';
 import { pinecone } from '../utils/pinecone-client.js';
-import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '../configs/pinecone.js';
+import { PINECONE_INDEX_NAME } from '../configs/pinecone.js';
 import express from 'express';
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  const { question, history } = req.body;
+  const { namespace, question, history } = req.body;
 
   console.log('question', question);
 
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
       {
         pineconeIndex: index,
         textKey: 'text',
-        namespace: PINECONE_NAME_SPACE, //namespace comes from your config folder
+        namespace: namespace, //namespace comes from your config folder
       },
     );
 

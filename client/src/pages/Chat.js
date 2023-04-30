@@ -5,12 +5,14 @@ import Sidebar from '../components/Sidebar';
 import LoadingDots from '../components/LoadingDots';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './chat.css'
+import { useIsRTL } from 'react-bootstrap/esm/ThemeProvider';
 
 function Chat() {
     const [query, setQuery] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [cases, setCases] = useState([]);
+    const [namespace, setNamespace] = useState('');
     const [messageState, setMessageState] = useState({
         messages: [{
             message: "Hi, what would you like to learn about this legal case?",
@@ -68,7 +70,7 @@ function Chat() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ question, history }),
+                body: JSON.stringify({ namespace, question, history }),
             });
 
             const data = await response.json();
@@ -108,35 +110,41 @@ function Chat() {
 
     function onCaseSelected(legalCase) {
         console.log(legalCase.title);
+        setNamespace(legalCase.title);
     }
 
     return (
         <div id="chatPage">
-            <Sidebar cases={cases} onCaseSelected={onCaseSelected}/>
+            <Sidebar cases={cases} onCaseSelected={onCaseSelected} setCases={setCases}/>
             <div id="workspace">
                 <h1 className='header'>
                     <img src='/Morgan_&_Morgan_Logo.svg.png'
-                    alt='Logo'
-                    width = "690px"
-                    height = "100px"/>
-                Legal Document Analysis Bot</h1>
-                <div ref={messageListRef} className="messageList">
-                {messages.map((message, index) => (
-                    <Message
-                        key={`message-${index}`}
-                        message={message}
-                        type={message.type}
-                        loading={loading}
+                        alt='Logo'
+                        width = "690px"
+                        height = "100px"
                     />
-                ))}
-                </div>
+                    Legal Document Analysis Bot
+                </h1>
+                { namespace ?
+                    <div ref={messageListRef} className="messageList">
+                    {messages.map((message, index) => (
+                        <Message
+                            key={`message-${index}`}
+                            message={message}
+                            type={message.type}
+                            loading={loading}
+                        />
+                    ))}
+                    </div>
+                : <h2>Select a Case from the Sidebar</h2>
+                }
                 <div className='center'>
                     <div className="cloudform">
                         <Form onSubmit={handleSubmit}>
                             <Form.Group>
                                 <Form.Control
                                     type="textarea"
-                                    disabled={loading}
+                                    disabled={loading || !namespace}
                                     onKeyDown={handleEnter}
                                     ref={textAreaRef}
                                     autoFocus={false}
@@ -153,7 +161,7 @@ function Chat() {
                                 />
                             </Form.Group>
                             <Form.Group>
-                                <Button type="submit" disabled={loading} className="generatebutton">
+                                <Button type="submit" disabled={loading || !namespace} className="generatebutton">
                                     {loading ? (
                                         <div className="loadingWheel">
                                             <LoadingDots color="#000" />
