@@ -8,7 +8,7 @@ function Message({ message, type, loading }) {
   let className;
   if (type === "apiMessage") {
     icon = (
-      <img
+      <video
         src="/botgif.gif"
         alt="AI"
         width="40"
