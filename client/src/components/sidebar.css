@@ -84,3 +84,9 @@
 .drag {
     margin-bottom: 20px;
 }
+
+.loadingBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
