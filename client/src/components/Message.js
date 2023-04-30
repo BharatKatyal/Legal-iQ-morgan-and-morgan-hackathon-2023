@@ -14,7 +14,6 @@ function Message({ message, type, loading }) {
         width="40"
         height="40"
         className="boticon"
-        priority
       />
     );
     className = "apimessage";
@@ -26,7 +25,6 @@ function Message({ message, type, loading }) {
         width="30"
         height="30"
         className="usericon"
-        priority
       />
     );
     className =

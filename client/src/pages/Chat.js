@@ -10,6 +10,7 @@ function Chat() {
     const [query, setQuery] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [cases, setCases] = useState([]);
     const [messageState, setMessageState] = useState({
         messages: [{
             message: "Hi, what would you like to learn about this legal case?",
@@ -26,11 +27,18 @@ function Chat() {
 
     useEffect(() => {
         textAreaRef.current?.focus();
+
+        const getDirectories = async () => {
+            const response = await fetch ('/api/db');
+            const json = await response.json();
+            console.log(json);
+            setCases(json);
+        }
+        getDirectories();
     }, []);
 
     async function handleSubmit(e) {
         e.preventDefault();
-
         setError(null);
 
         if (!query) {
@@ -104,7 +112,7 @@ function Chat() {
 
     return (
         <div id="chatPage">
-            <Sidebar cases={[{ id: 123, title: "Case" }, { id: 234, title: "Case 2" }]} onCaseSelected={onCaseSelected}/>
+            <Sidebar cases={cases} onCaseSelected={onCaseSelected}/>
             <div id="workspace">
                 <h1 className='header'><img src='/Morgan_&_Morgan_Logo.svg.png'
                     alt='Logo'
