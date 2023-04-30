@@ -1,0 +1,29 @@
+.sidebar {
+    max-width: 300px;
+    width: 260px;
+    padding: 12px;
+    background-color: var(--bs-gray-900);
+    color: white;
+    font-size: 0.875rem;
+    flex-grow: 2;
+}
+
+#newCaseButton {
+    display: flex;
+    width: 100%;
+    background-color: var(--bs-gray-900);
+    border-color: var(--bs-secondary-color);
+}
+
+#newCaseButton:hover {
+    background-color: var(--bs-gray-800);
+}
+
+.caseItem {
+    margin-bottom: 4px;
+    padding: 12px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--bs-secondary-color);
+    border-radius: 8px;
+}

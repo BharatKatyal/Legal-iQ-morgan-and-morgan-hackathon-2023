@@ -283,7 +283,7 @@
     text-align: center;
   }
 }
-.headImg {
-  width: 24px;
-  height: 10px;
+
+#root {
+    height: 100vh;
 }

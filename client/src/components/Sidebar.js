@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Modal, Form } from 'react-bootstrap';
+import { Modal, Button, Form } from 'react-bootstrap';
 import FileDropField from './FileDropField';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './sidebar.css';
 
 function Sidebar({ cases, onCaseSelected }) {
   const [selectedCase, setSelectedCase] = useState(null);
@@ -8,9 +10,9 @@ function Sidebar({ cases, onCaseSelected }) {
   const [newCaseNumber, setNewCaseNumber] = useState('');
   const [newCaseFiles, setNewCaseFiles] = useState([]);
 
-  const handleCaseClick = (caseId) => {
-    setSelectedCase(caseId);
-    onCaseSelected(caseId);
+  const handleCaseClick = (legalCase) => {
+    setSelectedCase(legalCase);
+    onCaseSelected(legalCase);
   };
 
   const handleNewCaseModalClick = () => {
@@ -23,10 +25,6 @@ function Sidebar({ cases, onCaseSelected }) {
 
   const handleNewCaseNumberChange = (e) => {
     setNewCaseNumber(e.target.value);
-  };
-
-  const handleNewCaseFilesDrop = (item) => {
-    setNewCaseFiles([...newCaseFiles, item]);
   };
 
   const handleNewCaseFormSubmit = (e) => {
@@ -44,18 +42,16 @@ function Sidebar({ cases, onCaseSelected }) {
 
   return (
     <div className="sidebar">
-      <button onClick={handleNewCaseModalClick}>New Case</button>
-      <ul>
+      <Button id="newCaseButton" onClick={handleNewCaseModalClick}>New Case</Button>
         {cases.map((caseItem) => (
-          <li
+          <div
+            className="caseItem"
             key={caseItem.id}
-            onClick={() => handleCaseClick(caseItem.id)}
-            className={selectedCase === caseItem.id ? 'selected' : ''}
+            onClick={() => handleCaseClick(caseItem)}
           >
             {caseItem.title}
-          </li>
+          </div>
         ))}
-      </ul>
         <Modal show={showNewCaseModal} onHide={handleNewCaseModalClose}>
             <Modal.Header closeButton>
                 <Modal.Title>New Case</Modal.Title>
@@ -75,7 +71,7 @@ function Sidebar({ cases, onCaseSelected }) {
                     <Form.Label>Files</Form.Label>
                         <FileDropField />
                 </Form.Group>
-                <button type="submit">Create</button>
+                <Button type="submit">Create</Button>
                 </Form>
             </Modal.Body>
         </Modal>
