@@ -6,6 +6,7 @@
   padding: 1rem;
 }
 
+
 .header {
   width: auto;
   background-color: #115099;
@@ -151,13 +152,7 @@
   }
 }
 
-.apimessage,
-.usermessage,
-.usermessagewaiting {
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-}
+
 
 /* markdown styles */
 .markdownanswer {
@@ -179,6 +174,10 @@
   color: #b13a3a;
   font-weight: 500;
 }
+
+
+
+
 
 .markdownanswer code {
   color: #15cb19;
@@ -286,6 +285,7 @@
 .morganImg {
   justify-self: flex-start;
 }
+
 
 /* Mobile optimization */
 @media (max-width: 600px) {

@@ -64,20 +64,22 @@
 
 
 
-.usericon,
+
+
+
 .boticon {
     position: absolute;
     right: -45px;
     top: 10px;
     border-radius: 50%;
-  }
-
-
-.boticon {
     border-radius: 80px;
 }
 
 .usericon {
+    position: absolute;
+    right: -45px;
+    top: 10px;
+    border-radius: 50%;
     margin-left: .3rem;
 }
 
