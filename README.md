@@ -22,6 +22,11 @@ To get started with the project, follow the steps below:
 ## Usage
 Once the server and client are running, you can access the web application by opening your web browser and navigating to `http://localhost:3000`. From here, you can explore the different features of the application and interact with the Morgan API.
 
+## View the Project
+Check out this video to see a demo of the project:
+
+[![Project Demo](https://img.youtube.com/vi/9bKv5LRHMOw/0.jpg)](https://www.youtube.com/watch?v=9bKv5LRHMOw)
+
 ## Contributing
 We welcome contributions from the community! If you're interested in contributing to the project, please fork the repository and submit a pull request with your changes. Before submitting a pull request, please ensure that your code follows our coding guidelines and passes all tests.
 
