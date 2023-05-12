@@ -1,6 +1,6 @@
-# Morgan Hackathon 2023
+# Morgan Hackathon April 2023 - Legal iQ - AI-driven Document Analysis Tool for Lawyers
 
-Welcome to the Morgan Hackathon 2023 GitHub repository! This project aims to develop a web application that utilizes the Morgan API to provide users with real-time data on a variety of topics. This repository contains the codebase for the project, including both the server-side and client-side code.
+Welcome to the Legal iQ GitHub repository! Legal iQ is a web application developed during the Morgan Hackathon 2023. It is an AI-driven document analysis tool designed specifically for lawyers. The application leverages the power of the Morgan API to provide real-time data processing and summarization of case-specific information across various formats. With Legal iQ, lawyers can efficiently analyze and summarize legal documents while ensuring data accuracy through proper source citations.
 
 ## Team Members
 - Bharat Katyal
